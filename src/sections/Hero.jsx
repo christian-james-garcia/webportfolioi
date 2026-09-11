@@ -192,18 +192,6 @@ export default function Hero() {
               </div>
             </motion.div>
 
-            {/* Floating Tag 1: React (Top Right) */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              whileHover={{ scale: 1.05 }}
-              className="absolute -top-3 -right-2 sm:right-4 bg-editorial-surface/90 backdrop-blur-md border border-editorial-border px-3.5 py-1.5 rounded-full shadow-soft font-mono text-xs text-editorial-ink flex items-center gap-1.5"
-            >
-              <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
-              <span>React</span>
-            </motion.div>
-
           </div>
         </div>
       </div>
