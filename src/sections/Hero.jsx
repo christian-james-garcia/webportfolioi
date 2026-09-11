@@ -1,10 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, ChevronRight, FileText, Sparkles, Download } from 'lucide-react';
+import { ArrowDown, ChevronRight, FileText } from 'lucide-react';
 import { personalInfo } from '../data/portfolio';
 import Button from '../components/Button';
-
-const RESUME_PDF_PATH = '/asset/Garcia_Christian.pdf';
 
 // Stagger container variants
 const heroContainerVariants = {
@@ -18,7 +16,7 @@ const heroItemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } }
 };
 
-export default function Hero({ onOpenResume }) {
+export default function Hero() {
   const scrollTo = (id) => {
     const el = document.getElementById(id);
     if (el) {
@@ -29,13 +27,8 @@ export default function Hero({ onOpenResume }) {
     }
   };
 
-  const handleDownload = () => {
-    const link = document.createElement('a');
-    link.href = RESUME_PDF_PATH;
-    link.download = 'Garcia_Christian_Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const handleViewResume = () => {
+    window.location.href = 'resume.html';
   };
 
   return (
@@ -105,11 +98,11 @@ export default function Hero({ onOpenResume }) {
               <motion.button
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
-                onClick={handleDownload}
+                onClick={handleViewResume}
                 className="px-6 py-3 rounded-full border border-editorial-ink/70 text-editorial-ink text-sm font-medium hover:bg-editorial-ink hover:text-editorial-bg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-editorial-accent inline-flex items-center gap-2 dark:border-editorial-border dark:hover:bg-editorial-ink dark:hover:text-editorial-bg"
               >
-                <Download className="w-4 h-4" />
-                Download Resume
+                <FileText className="w-4 h-4" />
+                View Resume
               </motion.button>
 
               <button
@@ -211,29 +204,6 @@ export default function Hero({ onOpenResume }) {
               <span>React</span>
             </motion.div>
 
-            {/* Floating Tag 2: MongoDB (Middle Left) */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              whileHover={{ scale: 1.05 }}
-              className="absolute top-1/2 -left-3 sm:-left-6 -translate-y-1/2 bg-editorial-surface/90 backdrop-blur-md border border-editorial-border px-3.5 py-1.5 rounded-full shadow-soft font-mono text-xs text-editorial-ink flex items-center gap-1.5"
-            >
-              <span className="w-2 h-2 rounded-full bg-green-500" />
-              <span>MongoDB</span>
-            </motion.div>
-
-            {/* Floating Tag 3: Framer Motion (Bottom Right) */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
-              whileHover={{ scale: 1.05 }}
-              className="absolute -bottom-4 right-6 bg-editorial-surface/90 backdrop-blur-md border border-editorial-border px-3.5 py-1.5 rounded-full shadow-soft font-mono text-xs text-editorial-ink flex items-center gap-1.5"
-            >
-              <Sparkles className="w-3.5 h-3.5 text-editorial-accent" />
-              <span>Framer Motion</span>
-            </motion.div>
           </div>
         </div>
       </div>

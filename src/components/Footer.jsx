@@ -20,7 +20,7 @@ export default function Footer({ onNavClick }) {
     { label: 'Certifications', href: '#certifications' },
     { label: 'Achievements', href: '#achievements' },
     { label: 'Education', href: '#education' },
-    { label: 'Resume', href: '#resume' },
+    { label: 'Resume', href: 'resume.html' },
     { label: 'Contact', href: '#contact' },
   ];
 

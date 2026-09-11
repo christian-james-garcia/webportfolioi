@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import ScrollProgress from './components/ScrollProgress';
 import Footer from './components/Footer';
-import ResumeModal from './components/ResumeModal';
 import Toast from './components/Toast';
 
 // Sections in exact required order
@@ -25,7 +24,6 @@ export default function App() {
     return window.matchMedia('(prefers-color-scheme: dark)').matches;
   });
 
-  const [isResumeOpen, setIsResumeOpen] = useState(false);
   const [toast, setToast] = useState({
     isVisible: false,
     message: '',
@@ -72,16 +70,6 @@ export default function App() {
     }
   };
 
-  const handleDownloadPdf = () => {
-    const link = document.createElement('a');
-    link.href = '/asset/Garcia_Christian.pdf';
-    link.download = 'Garcia_Christian_Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    showToast('Downloading resume PDF…', 'success');
-  };
-
   const handleNavClick = (e, href) => {
     e.preventDefault();
     const target = document.querySelector(href);
@@ -108,7 +96,7 @@ export default function App() {
       {/* Main Single-Page Content */}
       <main id="main-content">
         {/* 1. Home / Landing */}
-        <Hero onOpenResume={() => setIsResumeOpen(true)} />
+        <Hero />
 
         {/* 2. About Me */}
         <About />
@@ -136,8 +124,6 @@ export default function App() {
 
         {/* 10. Resume Section */}
         <ResumeSection
-          onOpenResume={() => setIsResumeOpen(true)}
-          onDownloadPdf={handleDownloadPdf}
         />
 
         {/* 11. Contact */}
@@ -146,12 +132,6 @@ export default function App() {
 
       {/* Footer */}
       <Footer onNavClick={handleNavClick} />
-
-      {/* Dedicated Resume Preview Modal */}
-      <ResumeModal
-        isOpen={isResumeOpen}
-        onClose={() => setIsResumeOpen(false)}
-      />
 
       {/* User Action Feedback Toast */}
       <Toast

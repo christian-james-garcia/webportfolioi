@@ -134,7 +134,6 @@ The public URL is:
 │   │   ├── Footer.jsx           # Editorial footer with back-to-top & copyright
 │   │   ├── Navbar.jsx           # Sticky nav, scroll spy, theme toggle, mobile drawer
 │   │   ├── ProjectCard.jsx      # Typography header badge, tags, action handlers
-│   │   ├── ResumeModal.jsx      # Verified resume document view & download placeholder
 │   │   ├── ScrollProgress.jsx   # Top reading progress indicator
 │   │   ├── SectionHeading.jsx   # Kicker + Fraunces heading + subtitle
 │   │   ├── SkillCard.jsx        # S-01, W-02, D-03, T-04 categories with tags
@@ -180,5 +179,5 @@ The public URL is:
 - **Explicit Placeholders (No fabricated links or data)**:
   - **LinkedIn**: Labeled as "Pending setup".
   - **OJT / Internship**: Marked as "Coming soon" with formal explanation.
-  - **Resume PDF**: Interactive modal preview active; download button informs that final signed PDF will be provided upon graduation clearance.
+  - **Resume PDF**: Dedicated `resume.html` viewer with direct PDF download.
   - **Internal Projects**: Live demo & GitHub actions trigger informative toasts noting internal academic/enterprise repo status.

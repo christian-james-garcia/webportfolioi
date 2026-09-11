@@ -4,7 +4,7 @@ import { Download, Sparkles, ArrowRight } from 'lucide-react';
 
 const RESUME_PDF_PATH = '/asset/Garcia_Christian.pdf';
 
-export default function ResumeSection({ onOpenResume }) {
+export default function ResumeSection() {
   const handleDirectDownload = () => {
     const link = document.createElement('a');
     link.href = RESUME_PDF_PATH;
@@ -85,16 +85,15 @@ export default function ResumeSection({ onOpenResume }) {
               transition={{ delay: 0.4 }}
               className="flex flex-wrap items-center gap-4"
             >
-              <motion.button
+              <motion.a
                 whileHover={{ scale: 1.04, backgroundColor: '#F3EADD' }}
                 whileTap={{ scale: 0.97 }}
-                type="button"
-                onClick={onOpenResume}
+                href="resume.html"
                 className="px-6 py-3 rounded-full bg-white text-editorial-ink font-medium text-sm transition-all shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white inline-flex items-center gap-2"
               >
                 View resume
                 <ArrowRight className="w-4 h-4" />
-              </motion.button>
+              </motion.a>
 
               <motion.button
                 whileHover={{ scale: 1.04, backgroundColor: 'rgba(255,255,255,0.15)' }}

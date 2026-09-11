@@ -12,7 +12,7 @@ const NAV_ITEMS = [
   { label: 'Certifications', href: '#certifications' },
   { label: 'Achievements', href: '#achievements' },
   { label: 'Education', href: '#education' },
-  { label: 'Resume', href: '#resume' },
+  { label: 'Resume', href: 'resume.html' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -43,6 +43,10 @@ export default function Navbar({ isDark, toggleTheme }) {
   }, []);
 
   const handleNavClick = (e, href) => {
+    if (!href.startsWith('#')) {
+      setMobileMenuOpen(false);
+      return;
+    }
     e.preventDefault();
     const target = document.querySelector(href);
     if (target) {
