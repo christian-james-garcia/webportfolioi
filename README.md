@@ -104,6 +104,18 @@ vercel
    - `VITE_FORMSPREE_ENDPOINT` = your Formspree endpoint URL
 7. Click **Deploy**.
 
+## GitHub Pages
+
+The repository also includes `.github/workflows/deploy-pages.yml`. Every push to
+`main` builds the Vite app and deploys `dist` to GitHub Pages.
+
+1. Open the repository's **Settings → Pages**.
+2. Set **Source** to **GitHub Actions**.
+3. Wait for the `Deploy portfolio to GitHub Pages` workflow to finish.
+
+The public URL is:
+`https://christian-james-garcia.github.io/webportfolioi/`
+
 ---
 
 ## 📂 Project Structure
